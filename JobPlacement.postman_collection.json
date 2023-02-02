@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "4ad21f5d-6551-405a-894f-cf7ffc57221a",
+		"name": "JobPlacement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25441470"
+	},
+	"item": [
+		{
+			"name": "http://192.168.1.6:5003/predict_placement",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "gender",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "ssc_percentage",
+							"value": "67.00",
+							"type": "text"
+						},
+						{
+							"key": "ssc_board",
+							"value": "Central",
+							"type": "text"
+						},
+						{
+							"key": "hsc_percentage",
+							"value": "78.91",
+							"type": "text"
+						},
+						{
+							"key": "hsc_board",
+							"value": "Central",
+							"type": "text"
+						},
+						{
+							"key": "degree_percentage",
+							"value": "98.71",
+							"type": "text"
+						},
+						{
+							"key": "work_experience",
+							"value": "No",
+							"type": "text"
+						},
+						{
+							"key": "emp_test_percentage",
+							"value": "88.99",
+							"type": "text"
+						},
+						{
+							"key": "specialisation",
+							"value": "Mkt&Fin",
+							"type": "text"
+						},
+						{
+							"key": "mba_percent",
+							"value": "67.99",
+							"type": "text"
+						},
+						{
+							"key": "undergrad_degree",
+							"value": "Sci&Tech",
+							"type": "text"
+						},
+						{
+							"key": "hsc_subject",
+							"value": "Arts",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.1.6:5003",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"6"
+					],
+					"port": "5003"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.1.6:5003/predict_placement",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "gender",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "ssc_percentage",
+							"value": "67.00",
+							"type": "text"
+						},
+						{
+							"key": "ssc_board",
+							"value": "Central",
+							"type": "text"
+						},
+						{
+							"key": "hsc_percentage",
+							"value": "78.91",
+							"type": "text"
+						},
+						{
+							"key": "hsc_board",
+							"value": "Central",
+							"type": "text"
+						},
+						{
+							"key": "degree_percentage",
+							"value": "98.71",
+							"type": "text"
+						},
+						{
+							"key": "work_experience",
+							"value": "No",
+							"type": "text"
+						},
+						{
+							"key": "emp_test_percentage",
+							"value": "88.99",
+							"type": "text"
+						},
+						{
+							"key": "specialisation",
+							"value": "Mkt&Fin",
+							"type": "text"
+						},
+						{
+							"key": "mba_percent",
+							"value": "67.99",
+							"type": "text"
+						},
+						{
+							"key": "undergrad_degree",
+							"value": "Sci&Tech",
+							"type": "text"
+						},
+						{
+							"key": "hsc_subject",
+							"value": "Arts",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.1.6:5003",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"6"
+					],
+					"port": "5003"
+				}
+			},
+			"response": []
+		}
+	]
+}

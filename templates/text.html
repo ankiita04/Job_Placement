@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ankita </title>
+    <style>
+        body{
+            background-image : url(https://www.educationworld.in/wp-content/uploads/2018/05/graduation.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(236, 78, 105);">
+    <!-- <img src="https://delhispeaking.in/wp-content/uploads/2020/09/Best-Mba-Colleges.jpg" alt="ankita" width="1400" height="400"> -->
+
+    
+    <!-- </style>
+    <div class="images">
+        <div class="photo">
+            <img src="F:\D-A-T-A -S-C-I-E-N-C-E\DATA SCIENCE\FLASK\ankita\my project\ankita.jpg" alt="ankita" width="1000" height="250 />
+    </div>
+   -->
+   <h1> 
+    <center>Job Placement <b>Prediction</b></center></h1>
+    <form method="GET" action="/predict_placement">
+
+
+        <label>gender:</label>
+        <!-- <input type = "text" name = "gender"> -->
+        <select name = "gender">
+            <option value = "M">M </option>
+            <option value = "F">F</option>   
+        </select>
+        <br>
+        <br>
+<!-- ################################################ -->
+        <label>ssc_percentage:</label>
+        <input type = "text" name = "ssc_percentage">
+        </select>
+        <br>
+        <br>
+<!-- ############################################## -->
+        <label>ssc_board:</label>
+        <!-- <input type = "text" name = "ssc_board"> -->
+        <select name = "ssc_board">
+            <option value = "Central">Central </option>
+            <option value = "Others">Others </option>   
+        </select>
+        <br>
+        <br>
+ <!-- ################################################ -->
+        <label>hsc_percentage:</label>
+        <input type = "text" name = "hsc_percentage">
+        </select>
+        <br>
+        <br>
+<!-- ############################################## -->
+        <label>hsc_board:</label>
+        <!-- <input type = "text" name = "ssc_board"> -->
+        <select name = "hsc_board">
+            <option value = "Central">Central </option>
+            <option value = "Others">Others </option>   
+        </select>
+        <br>
+        <br>
+<!-- ################################################ -->
+         <label>degree_percentage:</label>
+         <input type = "text" name = "degree_percentage">
+         </select>
+         <br>
+         <br>
+<!-- ############################################## -->
+        <label>work_experience:</label>
+        <!-- <input type = "text" name = "ssc_board"> -->
+        <select name = "work_experience">
+            <option value = "Yes">Yes </option>
+            <option value = "No">No</option>   
+        </select>
+        <br>
+        <br>
+<!-- ################################################ -->
+        <label>emp_test_percentage:</label>
+        <input type = "text" name = "emp_test_percentage">
+        </select>
+        <br>
+        <br>
+<!-- ################################################ -->
+        <label>specialisation:</label>
+        <!-- <input type = "text" name = "ssc_board"> -->
+        <select name = "specialisation">
+            <option value = "Mkt&Fin">MKt&Fin </option>
+            <option value = "Mkt&HR">Mkt&HR </option>   
+        </select>
+        <br>
+        <br>
+
+<!-- ################################################ -->
+        <label>mba_percent:</label>
+        <input type = "text" name = "mba_percent">
+        </select>
+        <br>
+        <br>
+<!-- ################################################ -->
+        <label>hsc_subject:</label>
+        <!-- <input type = "text" name = "hsc_subject"> -->
+        <select name = "hsc_subject">
+            <option value = "Arts">Arts </option>
+            <option value = "Commerce">Commerce </option>
+            <option value = "Science">Science </option>
+        </select>
+        <br>
+        <br>
+<!-- ################################################ -->
+        <label>undergrad_degree:</label>
+        <!-- <input type = "text" name = "undergrad_degree"> -->
+        <select name = "undergrad_degree">
+            <option value = "Comm&Mgmt">Comm&Mgmt </option>
+            <option value = "Sci&Tech">Sci&Tech </option>
+            <option value = "Others">Others </option>
+        </select>
+        <br>
+        <br>
+<!-- ################################################ -->
+
+
+
+        <input type = "submit" value="SUBMIT">
+
+        <br>
+
+        <h4><strong> <b> {{Result}} </b> </strong></h4>
+        <!-- <h4><strong>Your insurance premium charges will be <b> {{ prediction }} /- Rs.</b> Only </strong></h4> -->
+
+
+
+    </form>
+
+
+</body>
+</html>
+

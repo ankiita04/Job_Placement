@@ -3,6 +3,7 @@ import json
 import config
 import numpy as np
 from werkzeug.datastructures import MultiDict
+import pymongo
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -23,16 +24,22 @@ class JobPlacement():
         self.undergrad_degree=undergrad_degree
         self.hsc_subject = hsc_subject 
 
+    def __database_init(self):
+        mongo_client = pymongo.MongoClient("mongodb://localhost:27017")
+        database_name = 'placement_predict_db'
+        db = mongo_client[database_name]
+        self.collection_user_input = db['user_input']
+
+
+
     def __load_model(self): # Private Method
         # Load Model File
         with open(r'artifacts/regression_model.pkl', 'rb') as f:
             self.model = pickle.load(f)
-            # print('self.model >>',self.model)
 
         # Load Project Data 
         with open(r'artifacts/project_data.json','r') as f:
             self.project_data = json.load( f)
-            # print("Project Data :",self.project_data)
 
 
 
@@ -60,12 +67,28 @@ class JobPlacement():
 
         # print("Test Array is :",test_array)
 
-        predict_placement = np.around(self.model.predict(test_array)[0],3)
-        print("Predicted Placement :", predict_placement)
-        return predict_placement
+        self.predict_placement = int(np.around(self.model.predict(test_array)[0],3))
+        print("Predicted Placement :", self.predict_placement)
+
+        return self.predict_placement
+
+    def database(self):
+        self.get_predict_placement()
+        self.__database_init()
+        self.collection_user_input.insert_one({
+            "gender" :self.gender, "ssc_percentage": self.ssc_percentage, "ssc_board" : self.ssc_board,
+            "hsc_board" : self.hsc_board,"hsc_percentage": self.hsc_percentage,"degree_percentage": self.degree_percentage,
+            "work_experience":self.work_experience,"emp_test_percentage":self.emp_test_percentage,"mba_percent": self.mba_percent,
+            "specialisation":self.specialisation, "undergrad_degree":self.undergrad_degree, "hsc_subject":self.hsc_subject, "predict_placement":self.predict_placement
+
+        })
+
+        
 
 if __name__ == '__main__':
+
     cls = JobPlacement('M',67,'Central',70,'Central',70,'No',88,'Mkt&Fin',80,'Arts','Comm&Mgmt')
     prediction = cls.get_predict_placement()
+    cls.database()
     print(prediction)
     

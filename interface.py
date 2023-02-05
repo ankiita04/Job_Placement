@@ -32,12 +32,14 @@ def predict_placement():
 
             job_place = JobPlacement(gender,ssc_percentage, ssc_board,hsc_percentage,hsc_board,degree_percentage, work_experience,emp_test_percentage, specialisation,mba_percent,hsc_subject,undergrad_degree)
             placement = job_place.get_predict_placement()
+            job_place.database()
 
             if placement == 1:
                 return  render_template("text.html",Result = "You will placed")
             elif placement == 0 :
                 return  render_template("text.html",Result ="You will not placed")
              
+        
         else:
             data = request.args.get
 
@@ -58,6 +60,7 @@ def predict_placement():
 
             job_place = JobPlacement(gender,ssc_percentage, ssc_board,hsc_percentage,hsc_board,degree_percentage, work_experience,emp_test_percentage, specialisation,mba_percent,hsc_subject,undergrad_degree)
             placement = job_place.get_predict_placement()
+            job_place.database()
 
             if placement == 1:
                 return  render_template("text.html",Result = "You will placed")
